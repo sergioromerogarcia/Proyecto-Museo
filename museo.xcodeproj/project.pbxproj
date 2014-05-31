@@ -22,6 +22,8 @@
 		B26C762F19142041003023BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26C761119142041003023BB /* UIKit.framework */; };
 		B26C763719142041003023BB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B26C763519142041003023BB /* InfoPlist.strings */; };
 		B26C763919142041003023BB /* museoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B26C763819142041003023BB /* museoTests.m */; };
+		B29FC41A193A143500BC1802 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B29FC419193A143500BC1802 /* MapKit.framework */; };
+		B29FC41D193A168100BC1802 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B29FC41C193A168100BC1802 /* MapViewController.m */; };
 		B2A6E4371923E8B200E66DAD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A6E4361923E8B200E66DAD /* AppDelegate.m */; };
 		B2A6E43A1924081100E66DAD /* cuadro.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2A6E4391924081100E66DAD /* cuadro.jpg */; };
 		B2A6E43C1924095700E66DAD /* Guernica.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2A6E43B1924095700E66DAD /* Guernica.jpg */; };
@@ -112,6 +114,9 @@
 		B26C763419142041003023BB /* museoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "museoTests-Info.plist"; sourceTree = "<group>"; };
 		B26C763619142041003023BB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B26C763819142041003023BB /* museoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = museoTests.m; sourceTree = "<group>"; };
+		B29FC419193A143500BC1802 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B29FC41B193A168100BC1802 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		B29FC41C193A168100BC1802 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		B2A6E4361923E8B200E66DAD /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B2A6E4381923F0BD00E66DAD /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B2A6E4391924081100E66DAD /* cuadro.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cuadro.jpg; sourceTree = "<group>"; };
@@ -180,6 +185,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B29FC41A193A143500BC1802 /* MapKit.framework in Frameworks */,
 				B26C761019142041003023BB /* CoreGraphics.framework in Frameworks */,
 				B26C761219142041003023BB /* UIKit.framework in Frameworks */,
 				B26C760E19142041003023BB /* Foundation.framework in Frameworks */,
@@ -221,6 +227,7 @@
 		B26C760C19142041003023BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B29FC419193A143500BC1802 /* MapKit.framework */,
 				B26C760D19142041003023BB /* Foundation.framework */,
 				B26C760F19142041003023BB /* CoreGraphics.framework */,
 				B26C761119142041003023BB /* UIKit.framework */,
@@ -236,6 +243,8 @@
 				B2A6E4361923E8B200E66DAD /* AppDelegate.m */,
 				B2A6E4381923F0BD00E66DAD /* AppDelegate.h */,
 				B26C761F19142041003023BB /* Main.storyboard */,
+				B29FC41B193A168100BC1802 /* MapViewController.h */,
+				B29FC41C193A168100BC1802 /* MapViewController.m */,
 				B21FABC7193662B800528372 /* QRCodeViewController.h */,
 				B21FABC8193662B800528372 /* QRCodeViewController.m */,
 				B2D839BB19292C49007F2F10 /* CuadroViewController.h */,
@@ -499,6 +508,7 @@
 				B2D839C5192BC68E007F2F10 /* ScrollViewController.m in Sources */,
 				B26C762419142041003023BB /* ViewController.m in Sources */,
 				B26C761A19142041003023BB /* main.m in Sources */,
+				B29FC41D193A168100BC1802 /* MapViewController.m in Sources */,
 				B2D839BD19292C49007F2F10 /* CuadroViewController.m in Sources */,
 				B2DE4D041926A74D009362FE /* MyCustomCell.m in Sources */,
 				B2A6E4371923E8B200E66DAD /* AppDelegate.m in Sources */,

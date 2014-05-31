@@ -135,7 +135,7 @@
             // Si el metadata es el código QR leido entonces deberemos actualizar el texto del label
             // Acto seguido paramos de leer y cambiamos el estado del botón
             [_lblStatus performSelectorOnMainThread:@selector(setText:) withObject:[metadataObj stringValue] waitUntilDone:NO];
-            
+            //Lanzamos la url que nos devuelve el código QR
             [[UIApplication sharedApplication] openURL:
              [NSURL URLWithString:
               [NSString stringWithFormat:@"%@", [metadataObj stringValue]]]];

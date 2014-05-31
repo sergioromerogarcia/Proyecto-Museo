@@ -153,6 +153,9 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="o4v-PZ-EV8" kind="push" id="HMb-di-mbr"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -909,6 +912,51 @@ Cg
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yvs-wb-jca" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2442" y="777"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="gZJ-16-nz8">
+            <objects>
+                <viewController id="o4v-PZ-EV8" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vca-QX-0X1"/>
+                        <viewControllerLayoutGuide type="bottom" id="kaN-bM-aGB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hHS-YL-w84">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gTs-OA-UhS">
+                                <rect key="frame" x="0.0" y="61" width="320" height="406"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lbf-tJ-FL3">
+                                <rect key="frame" x="0.0" y="467" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Zoom" id="hCH-YG-sN9">
+                                        <connections>
+                                            <action selector="zoomMapa:" destination="o4v-PZ-EV8" id="BXo-WN-e9N"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="beb-wz-Y2o"/>
+                                    <barButtonItem title="Tipo de Mapa" id="H0W-7d-Ddr">
+                                        <connections>
+                                            <action selector="tipoMapa:" destination="o4v-PZ-EV8" id="Emd-1x-VrF"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lot-tt-nOx"/>
+                    <connections>
+                        <outlet property="mapView" destination="gTs-OA-UhS" id="R1A-0G-Pxj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AhX-6k-w3x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1318" y="-1242"/>
         </scene>
         <!--Scroll View Controller-->
         <scene sceneID="M5P-Wa-l2L">
