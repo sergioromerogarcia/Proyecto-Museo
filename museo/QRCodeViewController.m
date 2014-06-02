@@ -62,14 +62,14 @@
         if ([self startReading]) {
             //Si nos devuelve YES la variable cambiamos el título del botón y el mensaje de la barra de status
             [_bbitemStart setTitle:@"Stop"];
-            [_lblStatus setText:@"Scanning QR Code..."];
+            [_lblStatus setText:@"Escaneando QR Code..."];
         }
     }
     else{
         // Nos encontramos leyendo el código o hemos pulsado el botón de Stop
         [self stopReading];
         // Cambiamos el título de del botón
-        [_bbitemStart setTitle:@"Start!"];
+        [_bbitemStart setTitle:@"Empezar!"];
     }
     
     // Reiniciamos el flag en el estado inicial
@@ -141,7 +141,7 @@
               [NSString stringWithFormat:@"%@", [metadataObj stringValue]]]];
             
             [self performSelectorOnMainThread:@selector(stopReading) withObject:nil waitUntilDone:NO];
-            [_bbitemStart performSelectorOnMainThread:@selector(setTitle:) withObject:@"Start!" waitUntilDone:NO];
+            [_bbitemStart performSelectorOnMainThread:@selector(setTitle:) withObject:@"Empezar!" waitUntilDone:NO];
             // Paramos de leer
             _isReading = NO;
             

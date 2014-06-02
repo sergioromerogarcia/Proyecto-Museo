@@ -12,6 +12,12 @@
 
 @end
 
+//Coordenadas Museo Picaso
+#define MUSEO_LATITUD 41.385194;
+#define MUSEO_LONGITUD 2.180944;
+//SPAN
+#define SPAN 0.30f;
+
 @implementation MapViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -61,12 +67,14 @@
    }
 
 - (IBAction)zoomMapa:(id)sender {
-    //Obtenemos las coordenadas del ususario mediante el userLocation
-    MKUserLocation *userLocation = _mapView.userLocation;
-    //Según las coordenadas obtenidas definimos una región para mostrar, en este caso 20000 metros
-    MKCoordinateRegion region =MKCoordinateRegionMakeWithDistance (userLocation.location.coordinate, 20000, 20000);
+    CLLocationCoordinate2D zoomLocation;
+    zoomLocation.latitude =41.385194;
+    zoomLocation.longitude= 2.180944;
+
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.005, 0.005);
+   
     //Mostramos la región en el mapa
-    [_mapView setRegion:region animated:NO];
+    [_mapView setRegion:region animated:YES];
     
 }
 
