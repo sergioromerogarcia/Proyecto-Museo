@@ -108,6 +108,9 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="gV3-QM-EZ3" kind="push" id="Kbz-Ai-4AQ"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="jOD-no-okC" imageView="usZ-wp-A3Q" rowHeight="50" style="IBUITableViewCellStyleDefault" id="QKx-EX-8sI">
                                         <rect key="frame" x="0.0" y="286" width="320" height="50"/>
@@ -231,6 +234,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ja-ON-vAa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1846" y="-1948"/>
+        </scene>
+        <!--Database View Controller-->
+        <scene sceneID="W9r-I7-U53">
+            <objects>
+                <viewController id="gV3-QM-EZ3" customClass="DatabaseViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1gx-EP-tnu"/>
+                        <viewControllerLayoutGuide type="bottom" id="3RK-UR-fBT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1uM-Nf-kul">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lH8-vQ-l1K"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1c7-bw-CCv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1846" y="-914"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="Ent-qh-g6q">

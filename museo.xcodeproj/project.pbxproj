@@ -30,6 +30,9 @@
 		B2A6E43E19240AAD00E66DAD /* Cubismo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2A6E43D19240AAD00E66DAD /* Cubismo.jpg */; };
 		B2A6E44119240BBE00E66DAD /* audio.png in Resources */ = {isa = PBXBuildFile; fileRef = B2A6E43F19240BBE00E66DAD /* audio.png */; };
 		B2A6E44219240BBE00E66DAD /* QR Code.png in Resources */ = {isa = PBXBuildFile; fileRef = B2A6E44019240BBE00E66DAD /* QR Code.png */; };
+		B2B513BC193DCFB500621210 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B513BB193DCFB500621210 /* libsqlite3.dylib */; };
+		B2B513C7193E07D300621210 /* DatabaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B513C6193E07D300621210 /* DatabaseViewController.m */; };
+		B2B513DD1940BB7100621210 /* ListaAudios.db in Resources */ = {isa = PBXBuildFile; fileRef = B2B513DC1940BB7100621210 /* ListaAudios.db */; };
 		B2C123F61938949000AC64EE /* museum.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C123F51938949000AC64EE /* museum.png */; };
 		B2C123F8193894A600AC64EE /* destination.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C123F7193894A600AC64EE /* destination.png */; };
 		B2C123FA193894E900AC64EE /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C123F9193894E900AC64EE /* calendar.png */; };
@@ -124,6 +127,10 @@
 		B2A6E43D19240AAD00E66DAD /* Cubismo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Cubismo.jpg; sourceTree = "<group>"; };
 		B2A6E43F19240BBE00E66DAD /* audio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = audio.png; sourceTree = "<group>"; };
 		B2A6E44019240BBE00E66DAD /* QR Code.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QR Code.png"; sourceTree = "<group>"; };
+		B2B513BB193DCFB500621210 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		B2B513C5193E07D300621210 /* DatabaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseViewController.h; sourceTree = "<group>"; };
+		B2B513C6193E07D300621210 /* DatabaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseViewController.m; sourceTree = "<group>"; };
+		B2B513DC1940BB7100621210 /* ListaAudios.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = ListaAudios.db; sourceTree = "<group>"; };
 		B2C123F51938949000AC64EE /* museum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = museum.png; sourceTree = "<group>"; };
 		B2C123F7193894A600AC64EE /* destination.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = destination.png; sourceTree = "<group>"; };
 		B2C123F9193894E900AC64EE /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
@@ -185,6 +192,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2B513BC193DCFB500621210 /* libsqlite3.dylib in Frameworks */,
 				B29FC41A193A143500BC1802 /* MapKit.framework in Frameworks */,
 				B26C761019142041003023BB /* CoreGraphics.framework in Frameworks */,
 				B26C761219142041003023BB /* UIKit.framework in Frameworks */,
@@ -227,6 +235,7 @@
 		B26C760C19142041003023BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B2B513BB193DCFB500621210 /* libsqlite3.dylib */,
 				B29FC419193A143500BC1802 /* MapKit.framework */,
 				B26C760D19142041003023BB /* Foundation.framework */,
 				B26C760F19142041003023BB /* CoreGraphics.framework */,
@@ -239,10 +248,11 @@
 		B26C761319142041003023BB /* museo */ = {
 			isa = PBXGroup;
 			children = (
-				B2A6E42E1923DFF000E66DAD /* Imagenes */,
 				B2A6E4361923E8B200E66DAD /* AppDelegate.m */,
 				B2A6E4381923F0BD00E66DAD /* AppDelegate.h */,
 				B26C761F19142041003023BB /* Main.storyboard */,
+				B2B513C5193E07D300621210 /* DatabaseViewController.h */,
+				B2B513C6193E07D300621210 /* DatabaseViewController.m */,
 				B29FC41B193A168100BC1802 /* MapViewController.h */,
 				B29FC41C193A168100BC1802 /* MapViewController.m */,
 				B21FABC7193662B800528372 /* QRCodeViewController.h */,
@@ -253,11 +263,12 @@
 				B2DE4D031926A74D009362FE /* MyCustomCell.m */,
 				B26C762219142041003023BB /* ViewController.h */,
 				B26C762319142041003023BB /* ViewController.m */,
-				B26C762519142041003023BB /* Images.xcassets */,
-				B26C761419142041003023BB /* Supporting Files */,
 				B2D839C3192BC68E007F2F10 /* ScrollViewController.h */,
 				B2D839C4192BC68E007F2F10 /* ScrollViewController.m */,
-				B20D5AA81936818A008A02FA /* beep.mp3 */,
+				B26C762519142041003023BB /* Images.xcassets */,
+				B2A6E42E1923DFF000E66DAD /* Imagenes */,
+				B2B513C2193DDC5300621210 /* Resources */,
+				B26C761419142041003023BB /* Supporting Files */,
 			);
 			path = museo;
 			sourceTree = "<group>";
@@ -349,6 +360,15 @@
 				B2C123F7193894A600AC64EE /* destination.png */,
 			);
 			name = Imagenes;
+			sourceTree = "<group>";
+		};
+		B2B513C2193DDC5300621210 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B2B513DC1940BB7100621210 /* ListaAudios.db */,
+				B20D5AA81936818A008A02FA /* beep.mp3 */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -460,6 +480,7 @@
 				B2A6E44119240BBE00E66DAD /* audio.png in Resources */,
 				B2DE4CEC1926A515009362FE /* Desamparados.jpg in Resources */,
 				B2A6E43A1924081100E66DAD /* cuadro.jpg in Resources */,
+				B2B513DD1940BB7100621210 /* ListaAudios.db in Resources */,
 				B2DE4CF21926A515009362FE /* ComidaFrugal.jpg in Resources */,
 				B2DE4CFA1926A515009362FE /* PaisajeMontañoso.jpg in Resources */,
 				B2C124001938D2BB00AC64EE /* QRElAbrazo.png in Resources */,
@@ -506,6 +527,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2D839C5192BC68E007F2F10 /* ScrollViewController.m in Sources */,
+				B2B513C7193E07D300621210 /* DatabaseViewController.m in Sources */,
 				B26C762419142041003023BB /* ViewController.m in Sources */,
 				B26C761A19142041003023BB /* main.m in Sources */,
 				B29FC41D193A168100BC1802 /* MapViewController.m in Sources */,
