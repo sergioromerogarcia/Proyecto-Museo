@@ -9,19 +9,27 @@
 #import <UIKit/UIKit.h>
 #import <sqlite3.h>
 
-@interface DatabaseViewController : UIViewController
+@interface DatabaseViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 {
     sqlite3 *db;
 }
+
+@property (weak, nonatomic) IBOutlet UITableView *audiosTable;
+
 //Array para guardar las lecturas que hacemos de la base de datos
 @property (nonatomic,retain) NSMutableArray *entries;
+@property (nonatomic,retain) NSMutableArray *ArrayNombreAudios;
+@property (nonatomic,retain) NSMutableArray *ArrayDescripcionAudios;
+
 //Definimos las columnas de la tabla ListaAudios de la Base de datos
 @property (nonatomic,readonly) NSInteger *idTabla;
 @property (nonatomic,readonly) NSString *ZonaMuseo;
 @property (nonatomic,readonly) NSString *NombreAudio;
 @property (nonatomic,readonly) NSString *DetalleAudio;
+
 //Path de la base de datos
 - (NSString *) filePath;
+
 -(void)openDB;
 
 -(void)createTable: (NSString *) tableName
@@ -29,5 +37,7 @@
         withField2:(NSString *) field2
         withField3:(NSString *) field3
         withField4:(NSString *) field4;
+
 -(void)readTable;
+
 @end

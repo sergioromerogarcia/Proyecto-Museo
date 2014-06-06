@@ -14,13 +14,24 @@
 
 @implementation DatabaseViewController
 
+
+- (void)viewDidLoad
+{
+    [self openDB];
+    [self readTable];
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    _audiosTable.delegate = self;
+    _audiosTable.dataSource = self;
+}
+
+//Método para crear la tabla en el caso que no exista
 -(void)createTable: (NSString *) tableName
         withField1:(NSString *) field1
         withField2:(NSString *) field2
         withField3:(NSString *) field3
         withField4:(NSString *) field4;
 {
-    NSLog(@"Entrando en el método createTable...");
     //Variable para controlar cualquier error
     char *err;
     //Variable para la sentencia SQL
@@ -34,22 +45,37 @@
         NSLog(@"Tabla creada correctamente");
     }
 }
-//Deberemos pasar como parámetro la zona donde nos encontramos
+
+//Método para la lectura de base de datos
 -(void)readTable{
-    //Inicializamos el array
+
+    //Inicializamos los arrays a cargar
     _entries = [[NSMutableArray alloc]init];
-    //Parámetro con la zona donde se encuentran
-    NSString *zonamuseo;
-//  NSString *sql = [NSString stringWithFormat:@"SELECT NombreAudio from ListaAudios where ZonaMuseo = '%@'",zonamuseo];
-    NSString *sql = [NSString stringWithFormat:@"SELECT NombreAudio from ListaAudios"];
+    _ArrayNombreAudios = [[NSMutableArray alloc] init];
+    _ArrayDescripcionAudios = [[NSMutableArray alloc] init];
+    
+    NSString *sql = [NSString stringWithFormat:@"SELECT * FROM tablaTest"];
     sqlite3_stmt *statement;
     
-    if(sqlite3_prepare_v2(db, [sql UTF8String], -1, &statement, nil) == SQLITE_OK){
+    
+    if(sqlite3_prepare_v2(db, [sql UTF8String], -1, &statement, NULL) == SQLITE_OK){
         while (sqlite3_step(statement) == SQLITE_ROW) {
-            //Recuperamos el valor de la columna Audio
-            char *audio = (char *) sqlite3_column_text(statement, 2);
-            NSString *audioStr = [[NSString alloc] initWithUTF8String:audio];
-            NSLog(@"Nombre del Audio '%@",audioStr);
+            //Recuperamos el valor de las columnas de cada registro
+            char *field1 = (char *) sqlite3_column_text(statement, 0);
+            NSString *field1Str = [[NSString alloc] initWithUTF8String:field1];
+            
+            char *field2 = (char *) sqlite3_column_text(statement, 1);
+            NSString *field2Str = [[NSString alloc] initWithUTF8String:field2];
+            
+            char *field3 = (char *) sqlite3_column_text(statement, 2);
+            NSString *field3Str = [[NSString alloc] initWithUTF8String:field3];
+            
+            char *field4 = (char *) sqlite3_column_text(statement, 3);
+            NSString *field4Str = [[NSString alloc] initWithUTF8String:field4];
+            
+            [_ArrayNombreAudios addObject: field3Str];
+            [_ArrayDescripcionAudios addObject:field4Str];
+            
         }
     }
 }
@@ -57,7 +83,7 @@
 //Recuperamos el fichero
 -(NSString *) filePath{
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    return [[paths objectAtIndex:0] stringByAppendingPathComponent:@"ListaAudios.db"];
+    return [[paths objectAtIndex:0] stringByAppendingPathComponent:@"test.sqlite"];
 }
 
 //Abrimos la base de datos
@@ -79,29 +105,28 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [self openDB];
-    [self readTable];
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
 }
-*/
+
+-(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [_ArrayNombreAudios count];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *simpleTableIdentifier = @"MyCell";
+    UITableViewCell *thisCell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (thisCell == nil){
+        thisCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    thisCell.textLabel.text = [_ArrayNombreAudios objectAtIndex:indexPath.row];
+    return thisCell;
+}
 
 @end
