@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B20D5AA91936818A008A02FA /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B20D5AA81936818A008A02FA /* beep.mp3 */; };
 		B21FABC9193662B800528372 /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FABC8193662B800528372 /* QRCodeViewController.m */; };
-		B2326E751941B6C6000AD4F9 /* test.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B2326E741941B6C6000AD4F9 /* test.sqlite */; };
 		B26C760E19142041003023BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26C760D19142041003023BB /* Foundation.framework */; };
 		B26C761019142041003023BB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26C760F19142041003023BB /* CoreGraphics.framework */; };
 		B26C761219142041003023BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26C761119142041003023BB /* UIKit.framework */; };
@@ -101,7 +100,6 @@
 		B20D5AA81936818A008A02FA /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
 		B21FABC7193662B800528372 /* QRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
 		B21FABC8193662B800528372 /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
-		B2326E741941B6C6000AD4F9 /* test.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.sqlite; sourceTree = "<group>"; };
 		B26C760A19142041003023BB /* museo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = museo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B26C760D19142041003023BB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B26C760F19142041003023BB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -367,7 +365,6 @@
 		B2B513C2193DDC5300621210 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B2326E741941B6C6000AD4F9 /* test.sqlite */,
 				B2B513DC1940BB7100621210 /* ListaAudios.db */,
 				B20D5AA81936818A008A02FA /* beep.mp3 */,
 			);
@@ -490,7 +487,6 @@
 				B2D839DD192D1880007F2F10 /* Restaurant.png in Resources */,
 				B2C123FA193894E900AC64EE /* calendar.png in Resources */,
 				B2D839DB192D1861007F2F10 /* cafeteria.png in Resources */,
-				B2326E751941B6C6000AD4F9 /* test.sqlite in Resources */,
 				B26C761819142041003023BB /* InfoPlist.strings in Resources */,
 				B2DE4CF01926A515009362FE /* PaseoColon.jpg in Resources */,
 				B2DE4CED1926A515009362FE /* Abrazo.jpg in Resources */,

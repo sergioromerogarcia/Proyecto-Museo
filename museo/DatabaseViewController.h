@@ -15,6 +15,7 @@
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *audiosTable;
+@property (weak, nonatomic) IBOutlet UILabel *lblOutput;
 
 //Array para guardar las lecturas que hacemos de la base de datos
 @property (nonatomic,retain) NSMutableArray *entries;
@@ -27,10 +28,6 @@
 @property (nonatomic,readonly) NSString *NombreAudio;
 @property (nonatomic,readonly) NSString *DetalleAudio;
 
-//Path de la base de datos
-- (NSString *) filePath;
-
--(void)openDB;
 
 -(void)createTable: (NSString *) tableName
         withField1:(NSString *) field1
@@ -38,6 +35,5 @@
         withField3:(NSString *) field3
         withField4:(NSString *) field4;
 
--(void)readTable;
 
 @end

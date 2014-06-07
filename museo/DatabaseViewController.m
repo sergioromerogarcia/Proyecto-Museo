@@ -17,12 +17,81 @@
 
 - (void)viewDidLoad
 {
-    [self openDB];
+    [self checkAndCreateDatabase];
     [self readTable];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _audiosTable.delegate = self;
     _audiosTable.dataSource = self;
+}
+
+-(void) checkAndCreateDatabase{
+    
+    BOOL success;
+    
+    NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSString *documentsDir = [documentPaths objectAtIndex:0];
+    NSString *databasePath = [documentsDir stringByAppendingPathComponent:@"ListaAudios.db"];
+    
+    NSLog(@"databasePath : %@", databasePath);
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    success = [fileManager fileExistsAtPath:databasePath];
+    
+    if(success) return;
+    
+    NSString *databasePathFromApp = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"ListaAudios.db"];
+    
+    [fileManager copyItemAtPath:databasePathFromApp toPath:databasePath error:nil];
+    
+}
+
+-(void)readTable{
+   
+    //Inicializamos los arrays a cargar
+    _entries = [[NSMutableArray alloc]init];
+    _ArrayNombreAudios = [[NSMutableArray alloc] init];
+    _ArrayDescripcionAudios = [[NSMutableArray alloc] init];
+    
+	NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSLog(@"documentPaths : %@", documentPaths);
+	NSString *documentsDir = [documentPaths objectAtIndex:0];
+	NSString *dbPath = [documentsDir stringByAppendingPathComponent:@"ListaAudios.db"];
+	sqlite3 *database;
+    
+    
+    if(sqlite3_open([dbPath UTF8String], &database) == SQLITE_OK)
+    {
+        NSString *query = [NSString stringWithFormat:@"SELECT * FROM ListaAudios"];
+        NSLog(@"QUERY : %@", query);
+        const char *sqlStatementGet = [query UTF8String];
+        sqlite3_stmt *compiledStatementGet;
+		if(sqlite3_prepare_v2(database, sqlStatementGet, -1, &compiledStatementGet, NULL) == SQLITE_OK)
+        {
+			while(sqlite3_step(compiledStatementGet) == SQLITE_ROW)
+            {
+                //Recuperamos el valor de las columnas de cada registro
+                /*
+                char *field1 = (char *) sqlite3_column_text(compiledStatementGet, 0);
+                NSString *field1Str = [[NSString alloc] initWithUTF8String:field1];
+                
+                char *field2 = (char *) sqlite3_column_text(compiledStatementGet, 1);
+                NSString *field2Str = [[NSString alloc] initWithUTF8String:field2];
+                */
+                char *field3 = (char *) sqlite3_column_text(compiledStatementGet, 2);
+                NSString *field3Str = [[NSString alloc] initWithUTF8String:field3];
+                
+                char *field4 = (char *) sqlite3_column_text(compiledStatementGet, 3);
+                NSString *field4Str = [[NSString alloc] initWithUTF8String:field4];
+                
+                [_ArrayNombreAudios addObject: field3Str];
+                [_ArrayDescripcionAudios addObject:field4Str];
+
+            }
+        }
+    }
+    
 }
 
 //Método para crear la tabla en el caso que no exista
@@ -46,55 +115,6 @@
     }
 }
 
-//Método para la lectura de base de datos
--(void)readTable{
-
-    //Inicializamos los arrays a cargar
-    _entries = [[NSMutableArray alloc]init];
-    _ArrayNombreAudios = [[NSMutableArray alloc] init];
-    _ArrayDescripcionAudios = [[NSMutableArray alloc] init];
-    
-    NSString *sql = [NSString stringWithFormat:@"SELECT * FROM tablaTest"];
-    sqlite3_stmt *statement;
-    
-    
-    if(sqlite3_prepare_v2(db, [sql UTF8String], -1, &statement, NULL) == SQLITE_OK){
-        while (sqlite3_step(statement) == SQLITE_ROW) {
-            //Recuperamos el valor de las columnas de cada registro
-            char *field1 = (char *) sqlite3_column_text(statement, 0);
-            NSString *field1Str = [[NSString alloc] initWithUTF8String:field1];
-            
-            char *field2 = (char *) sqlite3_column_text(statement, 1);
-            NSString *field2Str = [[NSString alloc] initWithUTF8String:field2];
-            
-            char *field3 = (char *) sqlite3_column_text(statement, 2);
-            NSString *field3Str = [[NSString alloc] initWithUTF8String:field3];
-            
-            char *field4 = (char *) sqlite3_column_text(statement, 3);
-            NSString *field4Str = [[NSString alloc] initWithUTF8String:field4];
-            
-            [_ArrayNombreAudios addObject: field3Str];
-            [_ArrayDescripcionAudios addObject:field4Str];
-            
-        }
-    }
-}
-
-//Recuperamos el fichero
--(NSString *) filePath{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    return [[paths objectAtIndex:0] stringByAppendingPathComponent:@"test.sqlite"];
-}
-
-//Abrimos la base de datos
--(void) openDB{
-    if (sqlite3_open([[self filePath] UTF8String], &(db)) != SQLITE_OK){
-        sqlite3_close(db);
-        NSAssert(0, @"Error al abrir la base de datos");
-    }else{
-        NSLog(@"Base de datos abierta");
-    }
-}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -129,4 +149,7 @@
     return thisCell;
 }
 
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+    _lblOutput.text = [_ArrayDescripcionAudios objectAtIndex:indexPath.row];
+}
 @end
