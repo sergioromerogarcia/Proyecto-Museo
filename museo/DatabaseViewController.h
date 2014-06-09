@@ -13,6 +13,7 @@
 @interface DatabaseViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 {
     sqlite3 *db;
+    int numPosicion;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *audiosTable;

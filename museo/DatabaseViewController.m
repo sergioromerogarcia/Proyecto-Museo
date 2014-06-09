@@ -154,22 +154,26 @@
     return thisCell;
 }
 
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
-    _lblOutput.text = [_ArrayDescripcionAudios objectAtIndex:indexPath.row];
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"row : %d", indexPath.row);
+    numPosicion = indexPath.row;
+    _lblOutput.text = [_ArrayDescripcionAudios objectAtIndex:(indexPath.row)];
 }
 
 //Como se peude pasar el indexpath .row?
 - (IBAction)playButton:(id)sender {
-   /*
+   
+    NSString *filename = [NSString stringWithFormat:@"%@", [_ArrayNombreAudios objectAtIndex:numPosicion]];
+    
     AVAudioPlayer *audioPlayer;
     NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle]
-                                         pathForResource:[_ArrayNombreAudios objectAtIndex:indexPath.row]
+                                         pathForResource: filename
                                          ofType:@"mp3"]];
     audioPlayer = [[AVAudioPlayer alloc]
                    initWithContentsOfURL:url
                    error:nil];
     [audioPlayer prepareToPlay];
     [audioPlayer play];
-    */
+    
 }
 @end

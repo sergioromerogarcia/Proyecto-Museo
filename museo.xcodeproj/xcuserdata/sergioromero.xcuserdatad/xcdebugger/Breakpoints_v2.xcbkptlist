@@ -54,7 +54,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "museo/DatabaseViewController.m"
@@ -74,12 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "museo/DatabaseViewController.m"
-            timestampString = "423992538.116054"
+            timestampString = "424001652.972665"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "-readTable"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "-playButton:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
