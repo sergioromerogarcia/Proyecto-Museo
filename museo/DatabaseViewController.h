@@ -14,18 +14,14 @@
 {
     sqlite3 *db;
     int numPosicion;
-    
-    AVAudioPlayer *audioPlayer;
 }
 
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
-
 @property (weak, nonatomic) IBOutlet UITableView *audiosTable;
 @property (weak, nonatomic) IBOutlet UILabel *lblOutput;
 - (IBAction)playButton:(id)sender;
 
 //Array para guardar las lecturas que hacemos de la base de datos
-@property (nonatomic,retain) NSMutableArray *entries;
 @property (nonatomic,retain) NSMutableArray *ArrayNombreAudios;
 @property (nonatomic,retain) NSMutableArray *ArrayDescripcionAudios;
 @property (nonatomic,retain) NSMutableArray *ArrayZonaMuseos;
@@ -35,7 +31,6 @@
 @property (nonatomic,readonly) NSString *ZonaMuseo;
 @property (nonatomic,readonly) NSString *NombreAudio;
 @property (nonatomic,readonly) NSString *DetalleAudio;
-
 @property (strong, nonatomic) IBOutlet UIButton *playButton;
 
 -(void)createTable: (NSString *) tableName
