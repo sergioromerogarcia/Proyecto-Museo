@@ -274,6 +274,7 @@
                     <connections>
                         <outlet property="audiosTable" destination="fdL-OS-zCI" id="P1o-mr-vYE"/>
                         <outlet property="lblOutput" destination="yTL-wm-g6Y" id="1mO-aB-Khf"/>
+                        <outlet property="playButton" destination="HhF-bG-9gX" id="K1V-Ub-iJO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1c7-bw-CCv" userLabel="First Responder" sceneMemberID="firstResponder"/>

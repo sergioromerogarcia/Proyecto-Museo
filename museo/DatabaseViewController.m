@@ -163,17 +163,41 @@
 //Como se peude pasar el indexpath .row?
 - (IBAction)playButton:(id)sender {
    
-    NSString *filename = [NSString stringWithFormat:@"%@", [_ArrayNombreAudios objectAtIndex:numPosicion]];
     
-    AVAudioPlayer *audioPlayer;
-    NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle]
-                                         pathForResource: filename
-                                         ofType:@"mp3"]];
-    audioPlayer = [[AVAudioPlayer alloc]
-                   initWithContentsOfURL:url
-                   error:nil];
-    [audioPlayer prepareToPlay];
-    [audioPlayer play];
-    
+    if ([audioPlayer isPlaying])
+    {
+        [audioPlayer stop];
+        [audioPlayer setCurrentTime:0.0];
+        [self.playButton setTitle:@"Play" forState:normal];
+    }
+    else
+    {
+        
+        NSString *filename = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@",[_ArrayNombreAudios objectAtIndex:numPosicion]] ofType:@"mp3"];
+        //[NSString stringWithFormat:@"%@", [_ArrayNombreAudios objectAtIndex:numPosicion]];
+        
+        NSLog(@"filename : %@", filename);
+        
+        
+        NSURL *url = [NSURL URLWithString:filename];
+        
+        /*[NSURL fileURLWithPath:[[NSBundle mainBundle]
+         pathForResource: filename
+         ofType:@"mp3"]];
+         */
+        audioPlayer = [[AVAudioPlayer alloc]
+                       initWithContentsOfURL:url
+                       error:nil];
+        
+        
+        //    NSString *beepFilePath = [[NSBundle mainBundle] pathForResource:@"beep" ofType:@"mp3"];
+        //    NSURL *beepURL = [NSURL URLWithString:beepFilePath];
+        
+        
+        
+        [audioPlayer prepareToPlay];
+        [audioPlayer play];
+        [self.playButton setTitle:@"Stop" forState:normal];
+    }
 }
 @end
