@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		B20D5AA91936818A008A02FA /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B20D5AA81936818A008A02FA /* beep.mp3 */; };
 		B21FABC9193662B800528372 /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FABC8193662B800528372 /* QRCodeViewController.m */; };
+		B2326E7B1943BE29000AD4F9 /* AudioZona1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B2326E761943BE29000AD4F9 /* AudioZona1.mp3 */; };
+		B2326E7C1943BE29000AD4F9 /* AudioZona2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B2326E771943BE29000AD4F9 /* AudioZona2.mp3 */; };
+		B2326E7D1943BE29000AD4F9 /* AudioZona3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B2326E781943BE29000AD4F9 /* AudioZona3.mp3 */; };
+		B2326E7E1943BE29000AD4F9 /* AudioZona4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B2326E791943BE29000AD4F9 /* AudioZona4.mp3 */; };
+		B2326E7F1943BE29000AD4F9 /* AudioZona5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B2326E7A1943BE29000AD4F9 /* AudioZona5.mp3 */; };
+		B2326E8119458618000AD4F9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2326E8019458618000AD4F9 /* AVFoundation.framework */; };
 		B26C760E19142041003023BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26C760D19142041003023BB /* Foundation.framework */; };
 		B26C761019142041003023BB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26C760F19142041003023BB /* CoreGraphics.framework */; };
 		B26C761219142041003023BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26C761119142041003023BB /* UIKit.framework */; };
@@ -100,6 +106,12 @@
 		B20D5AA81936818A008A02FA /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
 		B21FABC7193662B800528372 /* QRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
 		B21FABC8193662B800528372 /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
+		B2326E761943BE29000AD4F9 /* AudioZona1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AudioZona1.mp3; sourceTree = "<group>"; };
+		B2326E771943BE29000AD4F9 /* AudioZona2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AudioZona2.mp3; sourceTree = "<group>"; };
+		B2326E781943BE29000AD4F9 /* AudioZona3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AudioZona3.mp3; sourceTree = "<group>"; };
+		B2326E791943BE29000AD4F9 /* AudioZona4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AudioZona4.mp3; sourceTree = "<group>"; };
+		B2326E7A1943BE29000AD4F9 /* AudioZona5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AudioZona5.mp3; sourceTree = "<group>"; };
+		B2326E8019458618000AD4F9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B26C760A19142041003023BB /* museo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = museo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B26C760D19142041003023BB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B26C760F19142041003023BB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -192,6 +204,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2326E8119458618000AD4F9 /* AVFoundation.framework in Frameworks */,
 				B2B513BC193DCFB500621210 /* libsqlite3.dylib in Frameworks */,
 				B29FC41A193A143500BC1802 /* MapKit.framework in Frameworks */,
 				B26C761019142041003023BB /* CoreGraphics.framework in Frameworks */,
@@ -235,6 +248,7 @@
 		B26C760C19142041003023BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B2326E8019458618000AD4F9 /* AVFoundation.framework */,
 				B2B513BB193DCFB500621210 /* libsqlite3.dylib */,
 				B29FC419193A143500BC1802 /* MapKit.framework */,
 				B26C760D19142041003023BB /* Foundation.framework */,
@@ -365,6 +379,11 @@
 		B2B513C2193DDC5300621210 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B2326E761943BE29000AD4F9 /* AudioZona1.mp3 */,
+				B2326E771943BE29000AD4F9 /* AudioZona2.mp3 */,
+				B2326E781943BE29000AD4F9 /* AudioZona3.mp3 */,
+				B2326E791943BE29000AD4F9 /* AudioZona4.mp3 */,
+				B2326E7A1943BE29000AD4F9 /* AudioZona5.mp3 */,
 				B2B513DC1940BB7100621210 /* ListaAudios.db */,
 				B20D5AA81936818A008A02FA /* beep.mp3 */,
 			);
@@ -459,16 +478,20 @@
 				B2A6E44219240BBE00E66DAD /* QR Code.png in Resources */,
 				B2D839D3192CD8E9007F2F10 /* Man.png in Resources */,
 				B2DE4CF91926A515009362FE /* Minotauromaquia.jpg in Resources */,
+				B2326E7D1943BE29000AD4F9 /* AudioZona3.mp3 in Resources */,
 				B2C123FE1938D2BB00AC64EE /* QRAzoteasBarcelona.png in Resources */,
 				B2D839D9192D183D007F2F10 /* Llave.png in Resources */,
 				B2DE4CF81926A515009362FE /* Meninas.jpg in Resources */,
 				B2DE4CF41926A515009362FE /* Ofrenda.jpg in Resources */,
+				B2326E7C1943BE29000AD4F9 /* AudioZona2.mp3 in Resources */,
 				B2DE4D011926A515009362FE /* RieraSantJoan.jpg in Resources */,
 				B2DE4CFF1926A515009362FE /* MadreArtista.jpg in Resources */,
 				B2DE4CFB1926A515009362FE /* Picasso.jpg in Resources */,
+				B2326E7B1943BE29000AD4F9 /* AudioZona1.mp3 in Resources */,
 				B2DE4CF11926A515009362FE /* HombreBoina.jpg in Resources */,
 				B2DE4CF71926A515009362FE /* Menina.jpg in Resources */,
 				B2A6E43C1924095700E66DAD /* Guernica.jpg in Resources */,
+				B2326E7F1943BE29000AD4F9 /* AudioZona5.mp3 in Resources */,
 				B2DE4CEF1926A515009362FE /* FinalNumero.jpg in Resources */,
 				B26C762619142041003023BB /* Images.xcassets in Resources */,
 				B20D5AA91936818A008A02FA /* beep.mp3 in Resources */,
@@ -496,6 +519,7 @@
 				B2DE4CE81926A515009362FE /* BlanquitaSuarez.jpg in Resources */,
 				B2DE4CE61926A515009362FE /* BarracaMontmatre.jpg in Resources */,
 				B2C123F8193894A600AC64EE /* destination.png in Resources */,
+				B2326E7E1943BE29000AD4F9 /* AudioZona4.mp3 in Resources */,
 				B26C762119142041003023BB /* Main.storyboard in Resources */,
 				B2DE4CE91926A515009362FE /* Bodegon.jpg in Resources */,
 				B2D839D1192CD4B3007F2F10 /* hombre.png in Resources */,

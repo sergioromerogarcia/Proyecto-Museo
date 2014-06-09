@@ -13,7 +13,7 @@
 @end
 
 @implementation DatabaseViewController
-
+ AVAudioPlayer *audioPlayer;
 
 - (void)viewDidLoad
 {
@@ -53,6 +53,7 @@
     _entries = [[NSMutableArray alloc]init];
     _ArrayNombreAudios = [[NSMutableArray alloc] init];
     _ArrayDescripcionAudios = [[NSMutableArray alloc] init];
+    _ArrayZonaMuseos = [[NSMutableArray alloc] init];
     
 	NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
     NSLog(@"documentPaths : %@", documentPaths);
@@ -75,18 +76,22 @@
                 /*
                 char *field1 = (char *) sqlite3_column_text(compiledStatementGet, 0);
                 NSString *field1Str = [[NSString alloc] initWithUTF8String:field1];
-                
+                 */
                 char *field2 = (char *) sqlite3_column_text(compiledStatementGet, 1);
                 NSString *field2Str = [[NSString alloc] initWithUTF8String:field2];
-                */
+               
                 char *field3 = (char *) sqlite3_column_text(compiledStatementGet, 2);
                 NSString *field3Str = [[NSString alloc] initWithUTF8String:field3];
                 
                 char *field4 = (char *) sqlite3_column_text(compiledStatementGet, 3);
                 NSString *field4Str = [[NSString alloc] initWithUTF8String:field4];
                 
+                NSLog(@"NombreAudio  '%@'",field3Str );
                 [_ArrayNombreAudios addObject: field3Str];
+                NSLog(@"DetalleAudio  '%@'",field4Str );
                 [_ArrayDescripcionAudios addObject:field4Str];
+                NSLog(@"ZonaMuseo '%@'", field2Str);
+                [_ArrayZonaMuseos addObject:field2Str];
 
             }
         }
@@ -151,5 +156,20 @@
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
     _lblOutput.text = [_ArrayDescripcionAudios objectAtIndex:indexPath.row];
+}
+
+//Como se peude pasar el indexpath .row?
+- (IBAction)playButton:(id)sender {
+   /*
+    AVAudioPlayer *audioPlayer;
+    NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle]
+                                         pathForResource:[_ArrayNombreAudios objectAtIndex:indexPath.row]
+                                         ofType:@"mp3"]];
+    audioPlayer = [[AVAudioPlayer alloc]
+                   initWithContentsOfURL:url
+                   error:nil];
+    [audioPlayer prepareToPlay];
+    [audioPlayer play];
+    */
 }
 @end

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <sqlite3.h>
+#import <AVFoundation/AVAudioPlayer.h>
 
 @interface DatabaseViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 {
@@ -16,11 +17,13 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *audiosTable;
 @property (weak, nonatomic) IBOutlet UILabel *lblOutput;
+- (IBAction)playButton:(id)sender;
 
 //Array para guardar las lecturas que hacemos de la base de datos
 @property (nonatomic,retain) NSMutableArray *entries;
 @property (nonatomic,retain) NSMutableArray *ArrayNombreAudios;
 @property (nonatomic,retain) NSMutableArray *ArrayDescripcionAudios;
+@property (nonatomic,retain) NSMutableArray *ArrayZonaMuseos;
 
 //Definimos las columnas de la tabla ListaAudios de la Base de datos
 @property (nonatomic,readonly) NSInteger *idTabla;
