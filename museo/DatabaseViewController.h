@@ -14,7 +14,11 @@
 {
     sqlite3 *db;
     int numPosicion;
+    
+    AVAudioPlayer *audioPlayer;
 }
+
+@property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 
 @property (weak, nonatomic) IBOutlet UITableView *audiosTable;
 @property (weak, nonatomic) IBOutlet UILabel *lblOutput;
@@ -32,6 +36,7 @@
 @property (nonatomic,readonly) NSString *NombreAudio;
 @property (nonatomic,readonly) NSString *DetalleAudio;
 
+@property (strong, nonatomic) IBOutlet UIButton *playButton;
 
 -(void)createTable: (NSString *) tableName
         withField1:(NSString *) field1

@@ -438,7 +438,7 @@
 				ORGANIZATIONNAME = uoc;
 				TargetAttributes = {
 					B26C760919142040003023BB = {
-						DevelopmentTeam = RVLW94ZY2B;
+						DevelopmentTeam = 6WGYAZDZ64;
 					};
 					B26C762A19142041003023BB = {
 						TestTargetID = B26C760919142040003023BB;
